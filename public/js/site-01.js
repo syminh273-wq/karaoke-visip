@@ -435,7 +435,7 @@ function route(toTop){
   const pub=["site","restaurant","karaoke"].includes(v);
   ["site","restaurant","karaoke","admin"].forEach(k=>$("view-"+k).hidden=k!==v);
   $("siteTop").hidden=!pub;$("siteFloat").hidden=!pub;$("siteFoot").hidden=!pub;
-  document.querySelectorAll("#mNav [data-v]").forEach(l=>{if(l.dataset.v===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});const mz=$("mZalo");if(mz){const k=v==="karaoke";mz.href=k?"https://zalo.me/0948158159":"https://zalo.me/0983158159";mz.setAttribute("aria-label","Nhắn Zalo "+(k?"0948 158 159":"0983 158 159"))}
+  document.querySelectorAll("#mNav [data-v]").forEach(l=>{if(l.dataset.v===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});const mz=$("mZalo");if(mz){const k=v==="karaoke";mz.href=k?"https://zalo.me/0964946673":"https://zalo.me/0983158159";mz.setAttribute("aria-label","Nhắn Zalo "+(k?"0964.94.66.73":"0983 158 159"))}
   ["site","restaurant","karaoke"].forEach(k=>{const l=$("nl-"+k);if(k===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});
   if(v==="admin")renderAdmin();
   if(v==="restaurant")renderRestaurant();

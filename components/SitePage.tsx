@@ -42,7 +42,7 @@ function buildMarkup(view: View): string {
   if (view === "karaoke") {
     html = html.replace(
       '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0983158159" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0983 158 159"',
-      '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0948158159" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0948 158 159"',
+      '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0964946673" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0964.94.66.73"',
     );
   }
 
