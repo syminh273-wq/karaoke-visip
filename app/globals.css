@@ -65,7 +65,7 @@ button,input,select,textarea{font:inherit;color:inherit}
   background:linear-gradient(90deg,#100c0bef 0%,#100c0bbd 48%,#100c0b35 100%),
   radial-gradient(ellipse 30% 40% at 78% 30%,#e0b06a55,transparent 70%),
   radial-gradient(ellipse 25% 35% at 92% 70%,#c98a4a44,transparent 70%),
-  url("/img/r-hero.jpg") center/cover,#1a1410}
+  url("/img/r-hero.jpg") center/cover,#1a1410;background-image:image-set(url("/img/r-hero.webp") type("image/webp"),url("/img/r-hero.jpg") type("image/jpeg"))}
 .hero-inner{max-width:1180px;width:100%;margin:auto;padding-block:90px}
 .eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;font-weight:bold}
 .hero h1{font:clamp(42px,7vw,76px)/1.06 var(--f-land-d);max-width:700px;margin:18px 0;text-wrap:balance}
@@ -85,7 +85,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .feature{display:block;color:inherit}
 .feature .img{background-size:cover!important;background-position:center!important}
 .img-rest{background:url("/img/r-dining.jpg") center/cover,radial-gradient(circle at 30% 35%,#f1e3c855 0 6%,transparent 7%),radial-gradient(circle at 55% 55%,#e9d6b044 0 9%,transparent 10%),radial-gradient(ellipse 70% 60% at 50% 45%,#7a4a2a,#2a1a12 75%)}
-.img-kara{background:url("/img/k-mic.jpg") center/cover,radial-gradient(circle at 62% 38%,#2b2b2b 0 9%,#151515 10% 11%,transparent 12%),linear-gradient(115deg,transparent 58%,#1a1a1a 58% 61%,transparent 61%),radial-gradient(ellipse 60% 70% at 60% 40%,#a8542a66,#140f0e 70%)}
+.img-kara{background:url("/img/k-mic.jpg") center/cover,radial-gradient(circle at 62% 38%,#2b2b2b 0 9%,#151515 10% 11%,transparent 12%),linear-gradient(115deg,transparent 58%,#1a1a1a 58% 61%,transparent 61%),radial-gradient(ellipse 60% 70% at 60% 40%,#a8542a66,#140f0e 70%);background-image:image-set(url("/img/k-mic.webp") type("image/webp"),url("/img/k-mic.jpg") type("image/jpeg")),radial-gradient(circle at 62% 38%,#2b2b2b 0 9%,#151515 10% 11%,transparent 12%),linear-gradient(115deg,transparent 58%,#1a1a1a 58% 61%,transparent 61%),radial-gradient(ellipse 60% 70% at 60% 40%,#a8542a66,#140f0e 70%)}
 .feature .overlay{position:absolute;inset:0;background:linear-gradient(0deg,#100c0bf2,transparent 75%);display:flex;flex-direction:column;justify-content:end;padding:28px}
 .feature h3{font:32px var(--f-land-d);margin:0 0 8px}
 .feature p{color:#ddd0c2;line-height:1.6;margin:0 0 15px}
@@ -1417,3 +1417,24 @@ html:not([lang="vi"]) .dvi{display:none}
    only paints inside the box, so extend the paint area up/down without moving the layout. */
 .hs-h{line-height:1.2!important}
 .hs-h .l2,.bh2 h1 .l2{padding-top:.25em;margin-top:-.25em;padding-bottom:.12em;margin-bottom:-.12em}
+
+/* ===== SEO: real <img> inside image tiles (was a CSS background; looks identical) ===== */
+/* <picture class="wp"> only adds a WebP source; display:contents keeps the <img> laid out exactly as before */
+picture.wp{display:contents}
+.has-img{position:relative;overflow:hidden}
+.has-img img.cov{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;pointer-events:none}
+
+/* ===== Hero banner (desktop): grow to fit the text instead of clipping it =====
+   Slides used to be absolutely positioned inside a fixed-height banner, so on 1251–1440px screens the
+   longer slide ("Hầm Rượu") spilled under the header and over the slide tabs. Slides are now stacked in
+   one grid cell (like the mobile layout), the banner keeps its old height as a minimum and only grows
+   when a slide needs more room. Top/bottom padding are shifted by the same amount, so text that fits
+   stays centred exactly where it was. */
+@media(min-width:901px){
+  .hs{display:grid;height:auto;min-height:clamp(500px,40vw,720px)}
+  .hs-slide{position:relative;inset:auto;grid-area:1/1;display:grid}
+  .hs-in{position:relative;inset:auto;padding-top:24px;padding-bottom:calc(6% + 24px)}
+}
+@media(min-width:901px) and (max-width:1250px){
+  .hs-in{padding-top:34px;padding-bottom:102px}
+}

@@ -42,4 +42,20 @@ Upload the **contents of `out/`** to any static host.
 | Page title, description, favicon | `app/layout.tsx` |
 | Images and videos | `public/img/`, `public/vid/` |
 
-Pages use hash links: `/#site` (home), `/#restaurant`, `/#karaoke`.
+Pages: `/` (home), `/restaurant/`, `/karaoke/` (real URLs; old `/#restaurant` links redirect automatically).
+
+## SEO
+
+| What | Where |
+|---|---|
+| **Main domain** (canonical links, sitemap, share images) | Set `NEXT_PUBLIC_SITE_URL=https://your-domain` when building (e.g. in Cloudflare build settings), or put it in `lib/site.ts`. Until it is set, canonical/og:url/og:image and sitemap entries are left out. |
+| Page titles, descriptions, business info, structured data (JSON-LD) | `lib/site.ts` |
+| Share images (Facebook/Zalo, 1200×630) | `public/og/` |
+| `robots.txt`, `sitemap.xml` | `app/robots.ts`, `app/sitemap.ts` |
+| Cloudflare cache rules | `public/_headers` |
+
+How it works:
+
+- Each page (`/`, `/restaurant/`, `/karaoke/`) is built with its own view visible, and the parts that `public/js/site-01.js` draws (full menu of all dishes, galleries, rooms) are rendered into the HTML at build time (`lib/prerender.ts` runs `site-01.js` in a sandbox). Search engines see the full content; in the browser the script redraws the same HTML.
+- Photos: every `public/img/*.jpg|png` gets a smaller `.webp` next to it (originals are kept as fallback). `npm run build` creates missing ones automatically; run `npm run images` to do it by hand. Hero banners also have `.avif` versions.
+- Fonts are self-hosted (`app/fonts.css`, `public/fonts/`). The icon font only contains the icons the site uses: if you add a new icon name in `<span class="ms">…</span>`, it must be added to that font (re-download from Google Fonts with `icon_names=`).

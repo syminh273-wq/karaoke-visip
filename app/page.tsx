@@ -1,17 +1,14 @@
-import fs from "node:fs";
-import path from "node:path";
-import SiteScripts from "@/components/SiteScripts";
+import SitePage from "@/components/SitePage";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/site";
 
-// The page markup lives in app/markup.html (edit text/prices/links there).
-// It is read at build time and rendered as static HTML (re-read on every request in `npm run dev`).
-const readMarkup = () => fs.readFileSync(path.join(process.cwd(), "app", "markup.html"), "utf8");
+export const metadata = pageMetadata("site");
 
 export default function Home() {
-  const markup = readMarkup();
   return (
     <>
-      <div id="vsip-root" style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: markup }} />
-      <SiteScripts />
+      <JsonLd view="site" />
+      <SitePage view="site" />
     </>
   );
 }

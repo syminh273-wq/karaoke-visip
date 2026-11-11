@@ -345,7 +345,7 @@ function setLang(l,save=true){lang=DICT[l]?l:"vi";document.documentElement.lang=
 // toggle in the header
 const nav=document.querySelector("#siteTop .nav");
 if(nav){const sw=document.createElement("div");sw.className="lang-sw";sw.setAttribute("role","group");sw.setAttribute("aria-label","Ngôn ngữ / Language / 语言");
-  sw.innerHTML='<button type="button" data-lang="vi" aria-pressed="true" lang="vi" aria-label="Tiếng Việt">VI</button><button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans" aria-label="中文">中文</button>';
+  sw.innerHTML='<button type="button" data-lang="vi" aria-pressed="true" lang="vi" aria-label="VI – Tiếng Việt">VI</button><button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="EN – English">EN</button><button type="button" data-lang="zh" aria-pressed="false" lang="zh-Hans" aria-label="中文">中文</button>';
   sw.addEventListener("click",e=>{const b=e.target.closest("button");if(b)setLang(b.dataset.lang)});nav.appendChild(sw)}
 // translate anything rendered later
 obs=new MutationObserver(ms=>{if(busy||lang==="vi")return;busy=true;
