@@ -79,7 +79,7 @@ const EN={
 "Liên hệ":"Contact","Hầm rượu:":"Restaurant:","Karaoke:":"Karaoke:","Hầm Rượu & Karaoke VSIP":"VSIP Wine Cellar & Karaoke","Cơ sở":"Location",
 "Chỉ đường":"Directions","Bảng giá karaoke":"Karaoke prices","Bản đồ chỉ đường":"Map & directions","Mã số thuế:":"Tax code:",
 // floating buttons & dialogs
-"Nhắn Zalo 0337.800.100":"Message on Zalo 0337.800.100","Kết nối WeChat":"Connect on WeChat","Nhắn Messenger":"Message on Messenger",
+"Nhắn Zalo 0983 158 159":"Message on Zalo 0983 158 159","Kết nối WeChat":"Connect on WeChat","Nhắn Messenger":"Message on Messenger",
 "Gọi điện đặt chỗ":"Call to book","Gọi điện":"Call","Quét mã để kết bạn WeChat":"Scan to add us on WeChat","Mở WeChat":"Open WeChat","Đóng":"Close",
 "Mã QR WeChat – A. Khả":"WeChat QR code – A. Khả","GỌI ĐIỆN ĐẶT CHỖ":"CALL TO BOOK","Hầm Rượu & Karaoke VISIP":"VISIP Wine Cellar & Karaoke",
 "HOTLINE HẦM RƯỢU":"RESTAURANT HOTLINE","GỌI NGAY":"CALL NOW"
@@ -152,7 +152,7 @@ const ZH={
 "Nhà hàng món Việt – món Trung – hải sản tươi sống và karaoke phòng LED 3D. Nhận tiệc sinh nhật, liên hoan công ty, tiếp khách.":"越南菜、中餐、鲜活海鲜餐厅及3D LED卡拉OK包厢。承接生日宴、公司聚会和商务宴请。",
 "Liên hệ":"联系我们","Hầm rượu:":"餐厅：","Karaoke:":"卡拉OK：","Hầm Rượu & Karaoke VSIP":"VSIP酒窖 & 卡拉OK","Cơ sở":"门店",
 "Chỉ đường":"导航","Bảng giá karaoke":"卡拉OK价格","Bản đồ chỉ đường":"地图导航","Mã số thuế:":"税号：",
-"Nhắn Zalo 0337.800.100":"Zalo留言 0337.800.100","Kết nối WeChat":"微信联系","Nhắn Messenger":"Messenger留言",
+"Nhắn Zalo 0983 158 159":"Zalo留言 0983 158 159","Kết nối WeChat":"微信联系","Nhắn Messenger":"Messenger留言",
 "Gọi điện đặt chỗ":"致电预订","Gọi điện":"致电","Quét mã để kết bạn WeChat":"扫码添加微信好友","Mở WeChat":"打开微信","Đóng":"关闭",
 "Mã QR WeChat – A. Khả":"微信二维码 – A. Khả","GỌI ĐIỆN ĐẶT CHỖ":"致电预订","Hầm Rượu & Karaoke VISIP":"VISIP酒窖 & 卡拉OK",
 "HOTLINE HẦM RƯỢU":"餐厅热线","GỌI NGAY":"立即致电"

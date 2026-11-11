@@ -94,7 +94,7 @@ document.addEventListener("click",e=>{const a=e.target.closest("[data-jump]");if
 if($("bookingForm"))$("bookingForm").addEventListener("submit",e=>{e.preventDefault();const v=id=>$(id).value.trim();const o=$("bookOut");o.hidden=false;
   if(!v("guestName")||!v("guestPhone")){o.className="book-out err";o.textContent="Vui lòng nhập họ tên và số điện thoại.";return}
   const msg=`Xin chào Hầm Rượu & Karaoke VSIP, tôi muốn đặt chỗ.\nHọ tên: ${v("guestName")}\nSĐT: ${v("guestPhone")}\nLoại đặt: ${v("bookingType")}\nSố khách: ${v("guestCount")||"-"}\nThời gian: ${v("bookingDate").replace("T"," ")||"-"}\nYêu cầu: ${v("bookingNote")||"-"}`;
-  o.className="book-out";o.innerHTML=`Tin nhắn đã sẵn sàng. Mở <a href="https://zalo.me/0337800100?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">Zalo 0337.800.100</a> để gửi.<br><span style="white-space:pre-line;font-size:13px;opacity:.85">${esc(msg)}</span>`});
+  o.className="book-out";o.innerHTML=`Tin nhắn đã sẵn sàng. Mở <a href="https://zalo.me/0983158159?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">Zalo 0983 158 159</a> để gửi.<br><span style="white-space:pre-line;font-size:13px;opacity:.85">${esc(msg)}</span>`});
 
 /* ================= UNFOLD ADMIN ================= */
 let st={page:"dashboard",model:"dish",editing:null,tab:0,q:"",seg:"all",sel:new Set(),menu:null,confirm:false,sheet:false,fcat:"",fstatus:""};
@@ -409,7 +409,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if
   try{navigator.clipboard.writeText(t).then(done,()=>{selectText(b)})}catch(err){selectText(b)}});
 function selectText(b){const p=b.closest(".mb").querySelector("p");const r=document.createRange();r.selectNodeContents(p);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);b.textContent="BẤM ⌘C / CTRL+C ĐỂ COPY"}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-copyphone]");if(!b)return;const o=b.textContent;const ok=()=>{b.textContent="ĐÃ COPY ✓";setTimeout(()=>b.textContent=o,1600)};
-  try{navigator.clipboard.writeText("0337.800.100").then(ok,()=>{b.textContent="0337.800.100"})}catch(err){b.textContent="0337.800.100"}});
+  try{navigator.clipboard.writeText("0983 158 159").then(ok,()=>{b.textContent="0983 158 159"})}catch(err){b.textContent="0983 158 159"}});
 /* ---- call sheet: tel: links are blocked inside the preview frame ---- */
 function openCall(){
   $("callSheet").hidden=false;
@@ -435,7 +435,7 @@ function route(toTop){
   const pub=["site","restaurant","karaoke"].includes(v);
   ["site","restaurant","karaoke","admin"].forEach(k=>$("view-"+k).hidden=k!==v);
   $("siteTop").hidden=!pub;$("siteFloat").hidden=!pub;$("siteFoot").hidden=!pub;
-  document.querySelectorAll("#mNav [data-v]").forEach(l=>{if(l.dataset.v===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});const mz=$("mZalo");if(mz){const k=v==="karaoke";mz.href=k?"https://zalo.me/0948158159":"https://zalo.me/0337800100";mz.setAttribute("aria-label","Nhắn Zalo "+(k?"0948 158 159":"0337.800.100"))}
+  document.querySelectorAll("#mNav [data-v]").forEach(l=>{if(l.dataset.v===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});const mz=$("mZalo");if(mz){const k=v==="karaoke";mz.href=k?"https://zalo.me/0948158159":"https://zalo.me/0983158159";mz.setAttribute("aria-label","Nhắn Zalo "+(k?"0948 158 159":"0983 158 159"))}
   ["site","restaurant","karaoke"].forEach(k=>{const l=$("nl-"+k);if(k===v)l.setAttribute("aria-current","page");else l.removeAttribute("aria-current")});
   if(v==="admin")renderAdmin();
   if(v==="restaurant")renderRestaurant();

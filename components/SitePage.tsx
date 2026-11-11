@@ -41,7 +41,7 @@ function buildMarkup(view: View): string {
   // 3) Karaoke page uses the karaoke Zalo number (same as route() in site-01.js).
   if (view === "karaoke") {
     html = html.replace(
-      '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0337800100" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0337.800.100"',
+      '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0983158159" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0983 158 159"',
       '<a class="fab fab-zalo" id="mZalo" href="https://zalo.me/0948158159" target="_blank" rel="noopener" aria-label="Nhắn Zalo 0948 158 159"',
     );
   }
